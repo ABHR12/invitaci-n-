@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invitacion a comer alitas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #4A90E2;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+
+        #no-button {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ir a comer unas deliciosas alitas?</h1>
+    <p>Los alitas son deliciosas. ¿Estás lista para disfrutar de una deliciosa cita?</p>
+    <div class="button-container">
+        <button id="yes-button" class="button" onclick="redirectToYesPage()">Sí</button>
+        <button id="no-button" class="button" onclick="moveNoButton()">No</button>
+    </div>
+    <script>
+        function redirectToYesPage() {
+            window.location.href = 'pagina-si.html';
+        }
+
+        let moveCount = 0;
+
+        function moveNoButton() {
+            moveCount++;
+            const noButton = document.getElementById('no-button');
+            noButton.style.transform = `translate(${moveCount * 70}px, ${moveCount * 100}px)`;
+        }
+    </script>
+</body>
+</html>
